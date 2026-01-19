@@ -9,7 +9,22 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.pocsquarepaymentssdk",
+      "infoPlist": {
+        "NSBluetoothAlwaysUsageDescription": "This app requires Bluetooth access to connect to Square card readers.",
+        "NSBluetoothPeripheralUsageDescription": "This app requires Bluetooth access to connect to Square card readers.",
+        "NSLocationWhenInUseUsageDescription": "This app requires location access to process payments.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "This app requires location access to process payments.",
+        "NSMicrophoneUsageDescription": "This app requires microphone access for magstripe card readers.",
+        "UISupportedExternalAccessoryProtocols": [
+          "com.squareup.protocol.stand",
+          "com.squareup.s089",
+          "com.squareup.s025",
+          "com.squareup.s020"
+        ],
+        "UIBackgroundModes": ["bluetooth-central", "external-accessory"]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -36,6 +51,15 @@
           "backgroundColor": "#ffffff",
           "dark": {
             "backgroundColor": "#000000"
+          }
+        }
+      ],
+      "./plugins/withSquareMobilePayments.js",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "16.0"
           }
         }
       ]
